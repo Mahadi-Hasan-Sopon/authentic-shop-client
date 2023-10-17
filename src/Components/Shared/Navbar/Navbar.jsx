@@ -6,7 +6,7 @@ function Navbar() {
   const user = null;
 
   return (
-    <div className="py-2 z-50 bg-slate-800 rounded">
+    <div className="py-2 z-50 rounded max-w-7xl xl:mx-auto">
       <div className="navbar mx-auto">
         <div className="navbar-start">
           <Link
@@ -56,7 +56,7 @@ function Navbar() {
                 />
               ) : (
                 <>
-                  <RxAvatar className="w-12 h-12 md:w-14 md:h-14 rounded-full cursor-pointer text-[#ff6339] p-0.5" />
+                  <RxAvatar className="w-12 h-12 md:w-14 md:h-14 rounded-full cursor-pointer text-base-200 p-0.5" />
                 </>
               )}
               {user?.email && (
@@ -68,14 +68,14 @@ function Navbar() {
             {user ? (
               <button
                 // onClick={() => handleLogOutUser()}
-                className="text-lg md:text-xl py-2 px-8 md:px-10 text-white bg-gradient-to-r from-[#ff2259d0] to-[#ff6439d0]  rounded"
+                className="text-lg md:text-xl py-2 px-8 md:px-10 text-white bg-gradient-to-r from-slate-700 to-slate-600 rounded"
               >
                 Sign Out
               </button>
             ) : (
               <Link
                 to={"/login"}
-                className="text-lg md:text-xl py-2 px-8 md:px-10 text-white bg-gradient-to-r from-[#ff6339] to-[#ff2259] rounded"
+                className="text-lg md:text-xl py-2 px-8 md:px-10 text-white bg-gradient-to-r from-slate-700 to-slate-600 rounded"
               >
                 Login
               </Link>
@@ -98,7 +98,7 @@ const NavbarLinks = ({ LiClass }) => {
             isPending
               ? "text-amber-500 font-bold"
               : isActive
-              ? "text-slate-100 text-lg font-bold border-b-2 border-white"
+              ? "text-slate-100 text-lg font-bold"
               : "font-medium text-slate-200 block"
           }
           to="/"
@@ -113,7 +113,7 @@ const NavbarLinks = ({ LiClass }) => {
             isPending
               ? "text-amber-500 font-bold"
               : isActive
-              ? "text-slate-100 text-lg font-bold border-b-2 border-white"
+              ? "text-slate-100 text-lg font-bold"
               : "font-medium text-slate-200"
           }
         >
@@ -127,7 +127,7 @@ const NavbarLinks = ({ LiClass }) => {
             isPending
               ? "text-amber-500 font-bold"
               : isActive
-              ? "text-slate-100 text-lg font-bold border-b-2 border-white"
+              ? "text-slate-100 text-lg font-bold"
               : "font-medium text-slate-200"
           }
         >

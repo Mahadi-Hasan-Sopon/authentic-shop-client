@@ -1,6 +1,6 @@
 function AddProduct() {
   return (
-    <div>
+    <div className="max-w-7xl xl:mx-auto">
       <h1 className="text-3xl my-8 text-slate-800 dark:text-slate-5100 font-bold text-center">
         Add Product
       </h1>
@@ -80,7 +80,7 @@ function AddProduct() {
         </div>
         <div className="row sm:flex gap-6">
           <div className="form-control flex flex-col gap-4 w-full">
-            <button className="text-primaryNut text-2xl font-rancho text-center py-3 bg-base-300 rounded">
+            <button className="text-primaryNut text-2xl font-medium text-center py-3 bg-stone-200 hover:bg-base-100 rounded">
               Add Product
             </button>
           </div>

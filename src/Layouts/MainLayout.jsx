@@ -4,8 +4,8 @@ import Footer from "../Components/Shared/Footer/Footer";
 
 function MainLayout() {
   return (
-    <div className="max-w-7xl xl:mx-auto">
-      <div className="nav">
+    <div>
+      <div className="nav bg-slate-800">
         <Navbar />
       </div>
       <div className="outlet">

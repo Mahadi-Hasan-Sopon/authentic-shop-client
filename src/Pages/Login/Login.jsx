@@ -68,7 +68,7 @@ function Login() {
             </div>
             <div
               // onClick={handleGoogleLoginClick}
-              className="flex justify-center items-center gap-4 mt-6 w-full md:w-1/2 mx-auto py-4 px-6 rounded-lg border-2 border-[#ff2259d7] cursor-pointer font-bold md:text-xl text-white hover:bg-gradient-to-r from-[#ff2259b0] to-[#ff6439b4] hover:border-transparent"
+              className="flex justify-center items-center gap-4 mt-6 w-full md:max-lg:w-1/2 mx-auto py-4 px-6 rounded-lg border-2 border-[#ff2259d7] cursor-pointer font-bold md:text-xl text-slate-800 hover:bg-gradient-to-r from-[#ff2259b0] to-[#ff6439b4] hover:border-transparent"
             >
               <FcGoogle className="text-2xl" />
               <button className="text-lg">Login With Google</button>

@@ -5,7 +5,8 @@ import { AuthContext } from "../../Contexts/AuthContextProvider";
 import { ToastContainer, toast } from "react-toastify";
 
 function Register() {
-  const { registerWithEmailPassword, isLoading } = useContext(AuthContext);
+  const { registerWithEmailPassword, loginWithGoogle, isLoading } =
+    useContext(AuthContext);
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -34,6 +35,18 @@ function Register() {
       .catch((err) => {
         console.log(err);
         toast.error(err?.message);
+      });
+  };
+
+  const handleGoogleLoginClick = () => {
+    loginWithGoogle()
+      .then((result) => {
+        toast.success("user logged in successfully");
+        console.log(result.user);
+      })
+      .catch((error) => {
+        toast.error(error?.message);
+        console.log(error);
       });
   };
 
@@ -101,7 +114,10 @@ function Register() {
                 </form>
               </div>
             </div>
-            <div className="flex justify-center items-center gap-4 mt-6 w-full md:max-lg:w-1/2 mx-auto py-4 px-6 rounded-lg border-2 border-[#ff2259d7] cursor-pointer font-bold md:text-xl text-slate-800 hover:bg-gradient-to-r from-[#ff2259b0] to-[#ff6439b4] hover:border-transparent">
+            <div
+              onClick={handleGoogleLoginClick}
+              className="flex justify-center items-center gap-4 mt-6 w-full md:max-lg:w-1/2 mx-auto py-4 px-6 rounded-lg border-2 border-[#ff2259d7] cursor-pointer font-bold md:text-xl text-slate-800 hover:bg-gradient-to-r from-[#ff2259b0] to-[#ff6439b4] hover:border-transparent"
+            >
               <FcGoogle className="text-2xl" />
               <button className="text-lg">Sign in With Google</button>
             </div>

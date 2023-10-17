@@ -1,9 +1,42 @@
 import { Link } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
+import { ToastContainer, toast } from "react-toastify";
+import { useContext } from "react";
+import { AuthContext } from "../../Contexts/AuthContextProvider";
 
 function Login() {
+  const { loginWithEmailPassword, loginWithGoogle, isLoading } =
+    useContext(AuthContext);
+
+  const handleLoginClick = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    loginWithEmailPassword(email, password)
+      .then((result) => {
+        console.log(result.user);
+        toast.success("User login successful");
+      })
+      .catch((error) => {
+        console.log(error);
+        toast.error(error?.message);
+      });
+  };
+
+  const handleGoogleLoginClick = () => {
+    loginWithGoogle()
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <div>
+      {isLoading && "Loading....."}
       <div className="w-full md:w-2/3 lg:w-1/3 mx-auto">
         <div className="py-24">
           <div className="flex-col">
@@ -14,7 +47,7 @@ function Login() {
             </div>
             <div className="flex-shrink-0 w-full shadow-2xl bg-base-100 rounded-xl">
               <div className="card-body">
-                <form>
+                <form onSubmit={handleLoginClick}>
                   <div className="form-control">
                     <label className="label">
                       <span className="label-text">Email</span>
@@ -63,11 +96,11 @@ function Login() {
                     </button>
                   </div>
                 </form>
-                {/* <ToastContainer autoClose={2000} position="top-center" /> */}
+                <ToastContainer autoClose={2000} position="top-center" />
               </div>
             </div>
             <div
-              // onClick={handleGoogleLoginClick}
+              onClick={handleGoogleLoginClick}
               className="flex justify-center items-center gap-4 mt-6 w-full md:max-lg:w-1/2 mx-auto py-4 px-6 rounded-lg border-2 border-[#ff2259d7] cursor-pointer font-bold md:text-xl text-slate-800 hover:bg-gradient-to-r from-[#ff2259b0] to-[#ff6439b4] hover:border-transparent"
             >
               <FcGoogle className="text-2xl" />

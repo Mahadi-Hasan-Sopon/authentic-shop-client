@@ -14,6 +14,16 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_APPID,
 };
 
+// Your web app's Firebase configuration
+// const firebaseConfig = {
+//   apiKey: "AIzaSyBt5GiRaLu17l03aGPzbPM7Nfx5Ccx6PbE",
+//   authDomain: "authentic-shop-f5f81.firebaseapp.com",
+//   projectId: "authentic-shop-f5f81",
+//   storageBucket: "authentic-shop-f5f81.appspot.com",
+//   messagingSenderId: "502565189678",
+//   appId: "1:502565189678:web:457996b92d70b1d7bf47bf",
+// };
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 

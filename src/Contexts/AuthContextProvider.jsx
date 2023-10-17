@@ -5,10 +5,11 @@ import {
   signOut,
 } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
-import auth from "../../Firebase/firebase.config";
+import auth from "../Firebase/firebase.config";
 
-const AuthContext = createContext(null);
+export const AuthContext = createContext(null);
 
+// eslint-disable-next-line react/prop-types
 function AuthContextProvider({ children }) {
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -48,7 +49,9 @@ function AuthContextProvider({ children }) {
     signOutUser,
   };
 
-  <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>;
+  return (
+    <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
+  );
 }
 
 export default AuthContextProvider;

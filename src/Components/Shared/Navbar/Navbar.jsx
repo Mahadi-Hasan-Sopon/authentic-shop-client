@@ -1,9 +1,11 @@
 import PropTypes from "prop-types";
 import { Link, NavLink } from "react-router-dom";
 import { RxAvatar } from "react-icons/rx";
+import { useContext } from "react";
+import { AuthContext } from "../../../Contexts/AuthContextProvider";
 
 function Navbar() {
-  const user = null;
+  const { user } = useContext(AuthContext);
 
   return (
     <div className="py-2 z-50 rounded max-w-7xl xl:mx-auto">
@@ -60,7 +62,7 @@ function Navbar() {
                 </>
               )}
               {user?.email && (
-                <div className="tooltip-text absolute bg-black text-white py-2 px-4 rounded-md text-sm whitespace-nowrap opacity-0 transition-opacity duration-200 -top-2/3 left-1/2 transform -translate-x-1/2 group-hover:opacity-50">
+                <div className="tooltip-text absolute bg-black text-white py-2 px-4 rounded-md text-sm whitespace-nowrap opacity-0 transition-opacity duration-200 -bottom-3/4 left-1/2 transform -translate-x-1/2 group-hover:opacity-50">
                   {user?.email}
                 </div>
               )}

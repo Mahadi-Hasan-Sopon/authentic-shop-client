@@ -1,54 +1,28 @@
+import PropTypes from "prop-types";
 import { Link, NavLink } from "react-router-dom";
+import { RxAvatar } from "react-icons/rx";
 
 function Navbar() {
-  const navlinks = (
-    <>
-      <li>
-        <NavLink
-          to="/"
-          className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "active border-b-2" : ""
-          }
-        >
-          Home
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          to="/products/new"
-          className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "active" : ""
-          }
-        >
-          Add Product
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          to="/cart"
-          className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "active" : ""
-          }
-        >
-          My Cart
-        </NavLink>
-      </li>
-    </>
-  );
+  const user = null;
 
   return (
-    <div>
-      <h1 className="text-5xl font-bold text-center">Navbar Component</h1>
-      <div className="navbar bg-base-100">
+    <div className="py-7 z-50">
+      <div className="navbar mx-auto">
         <div className="navbar-start">
+          <Link
+            to="/"
+            className="hidden sm:block text-2xl font-bold text-white"
+          >
+            Authentic Shop
+          </Link>
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
+                className="h-8 w-8"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke="currentColor"
+                stroke="white"
               >
                 <path
                   strokeLinecap="round"
@@ -60,18 +34,53 @@ function Navbar() {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              className="dropdown-content mt-1 py-6 shadow bg-[#202020] space-y-4 w-[300px]"
             >
-              {navlinks}
+              <NavbarLinks LiClass={"px-8 md:px-12 block w-full"} />
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">Authentic Shop</a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">{navlinks}</ul>
+          <ul className="gap-10 menu-horizontal px-1">
+            <NavbarLinks />
+          </ul>
         </div>
-        <div className="navbar-end">
-          <Link to="/login">Login</Link>
+        <div className="navbar-end ">
+          <div className="flex items-center gap-2.5">
+            <div className="tooltip group mr-0.5 z-50">
+              {user?.photoURL ? (
+                <img
+                  className="w-12 h-12 md:w-14 md:h-14 rounded-full cursor-pointer"
+                  src={user.photoURL}
+                  alt="User image"
+                />
+              ) : (
+                <>
+                  <RxAvatar className="w-12 h-12 md:w-14 md:h-14 rounded-full cursor-pointer text-[#ff6339] p-0.5" />
+                </>
+              )}
+              {user?.email && (
+                <div className="tooltip-text absolute bg-black text-white py-2 px-4 rounded-md text-sm whitespace-nowrap opacity-0 transition-opacity duration-200 -top-2/3 left-1/2 transform -translate-x-1/2 group-hover:opacity-50">
+                  {user?.email}
+                </div>
+              )}
+            </div>
+            {user ? (
+              <button
+                // onClick={() => handleLogOutUser()}
+                className="text-lg md:text-xl py-2 px-8 md:px-10 text-white bg-gradient-to-r from-[#ff2259d0] to-[#ff6439d0]  rounded"
+              >
+                Sign Out
+              </button>
+            ) : (
+              <Link
+                to={"/login"}
+                className="text-lg md:text-xl py-2 px-8 md:px-10 text-white bg-gradient-to-r from-[#ff6339] to-[#ff2259] rounded"
+              >
+                Login
+              </Link>
+            )}
+          </div>
         </div>
       </div>
     </div>
@@ -79,3 +88,58 @@ function Navbar() {
 }
 
 export default Navbar;
+
+const NavbarLinks = ({ LiClass }) => {
+  const navLinks = (
+    <>
+      <li className={`${LiClass ? LiClass : ""}`}>
+        <NavLink
+          className={({ isActive, isPending }) =>
+            isPending
+              ? "text-amber-500 font-bold"
+              : isActive
+              ? "text-slate-100 text-lg font-bold border-b-2 border-white"
+              : "font-medium text-slate-200 block"
+          }
+          to="/"
+        >
+          Home
+        </NavLink>
+      </li>
+      <li className={`${LiClass ? LiClass : ""}`}>
+        <NavLink
+          to="/products/new"
+          className={({ isActive, isPending }) =>
+            isPending
+              ? "text-amber-500 font-bold"
+              : isActive
+              ? "text-slate-100 text-lg font-bold border-b-2 border-white"
+              : "font-medium text-slate-200"
+          }
+        >
+          Add Product
+        </NavLink>
+      </li>
+      <li className={`${LiClass ? LiClass : ""}`}>
+        <NavLink
+          to="/cart"
+          className={({ isActive, isPending }) =>
+            isPending
+              ? "text-amber-500 font-bold"
+              : isActive
+              ? "text-slate-100 text-lg font-bold border-b-2 border-white"
+              : "font-medium text-slate-200"
+          }
+        >
+          My Cart
+        </NavLink>
+      </li>
+    </>
+  );
+
+  return navLinks;
+};
+
+NavbarLinks.propTypes = {
+  LiClass: PropTypes.string,
+};

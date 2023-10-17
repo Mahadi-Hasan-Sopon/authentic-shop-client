@@ -6,7 +6,7 @@ function Navbar() {
   const user = null;
 
   return (
-    <div className="py-7 z-50">
+    <div className="py-2 z-50 bg-slate-800 rounded">
       <div className="navbar mx-auto">
         <div className="navbar-start">
           <Link

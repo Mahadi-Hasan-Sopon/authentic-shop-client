@@ -255,7 +255,7 @@ const ProductCard = ({ product }) => {
         </h4>
 
         <p className="text-lg text-bold text-slate-200">
-          Price: ${((price * 100) / 100).toFixed(2)}
+          Price: ${((parseInt(price) * 100) / 100).toFixed(2)}
         </p>
         <p className="text-base text-medium text-slate-200">
           Rating: {rating?.rate}, Review: {rating?.count}

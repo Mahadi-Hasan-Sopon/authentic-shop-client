@@ -1,7 +1,7 @@
 function AddProduct() {
   return (
     <div className="max-w-7xl xl:mx-auto">
-      <h1 className="text-3xl my-8 text-slate-800 dark:text-slate-5100 font-bold text-center">
+      <h1 className="text-3xl my-8 text-slate-200 dark:text-slate-5100 font-bold text-center">
         Add Product
       </h1>
       <form className="space-y-6 bg-base-200 p-6">
@@ -25,7 +25,7 @@ function AddProduct() {
             <input
               type="text"
               name="category"
-              placeholder="Enter product category"
+              placeholder="e.g: monitor, laptop, smartphones, computer, storage, sound-system"
               className="input rounded p-3 placeholder:text-secondaryBlack placeholder:text-opacity-60"
             />
           </div>
@@ -80,7 +80,7 @@ function AddProduct() {
         </div>
         <div className="row sm:flex gap-6">
           <div className="form-control flex flex-col gap-4 w-full">
-            <button className="text-primaryNut text-2xl font-medium text-center py-3 bg-stone-200 hover:bg-base-100 rounded">
+            <button className="text-slate-800 text-2xl font-bold text-center py-3 bg-stone-200 hover:bg-base-100 rounded">
               Add Product
             </button>
           </div>

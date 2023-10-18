@@ -18,7 +18,7 @@ function Home() {
   }, []);
 
   return (
-    <div className="max-w-7xl xl:mx-auto mt-6">
+    <div className="max-w-7xl xl:mx-auto my-6">
       <header className="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
         <div className="carousel md:col-span-3 row-span-2">
           <Carousel autoPlay infiniteLoop showThumbs={false} className="w-full">
@@ -105,7 +105,7 @@ function Home() {
           </div>
         </div>
       </header>
-      <div className="trending my-20 px-6">
+      <div className="trending my-6 md:my-10 px-6">
         <h2 className="text-3xl font-bold text-slate-100 mb-6">
           Trending Products
         </h2>
@@ -116,6 +116,122 @@ function Home() {
               ?.map((product) => (
                 <ProductCard key={product._id} product={product} />
               ))}
+        </div>
+      </div>
+      <div className="brands py-6 md:py-10 px-6">
+        <h2 className="text-3xl uppercase font-bold text-slate-100 mb-6">
+          Brands
+        </h2>
+        <div className="icons grid gap-8 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5">
+          <div className="nokia h-32 p-2 bg-white flex flex-col justify-center items-center rounded">
+            <img
+              className="max-w-full max-h-full h-3/4"
+              src="https://i.ibb.co/s3rYmGB/Group-22037-170x.png"
+              alt=""
+            />
+            <h3 className="text-2xl font-bold text-slate-900">Nokia</h3>
+          </div>
+          <div className="samsung h-32 p-2 bg-white flex flex-col justify-center items-center rounded">
+            <img
+              className="max-w-full max-h-full h-3/4"
+              src="https://i.ibb.co/DKwgC4t/Group-22036-170x.png"
+              alt=""
+            />
+            <h3 className="text-2xl font-bold text-slate-900">Samsung</h3>
+          </div>
+          <div className="canon h-32 p-2 bg-white flex flex-col justify-center items-center rounded">
+            <img
+              className="max-w-full max-h-full h-3/4"
+              src="https://i.ibb.co/2WYRK4p/Group-22035-170x.png"
+              alt=""
+            />
+            <h3 className="text-2xl font-bold text-slate-900">Canon</h3>
+          </div>
+          <div className="dell h-32 p-2 bg-white flex flex-col justify-center items-center rounded">
+            <img
+              className="max-w-full max-h-full h-3/4"
+              src="https://i.ibb.co/FWMRJr7/Dell-Logo-1989-2016.png"
+              alt=""
+            />
+            <h3 className="text-2xl font-bold text-slate-900">Dell</h3>
+          </div>
+
+          <div className="microsoft h-32 p-2 bg-white flex flex-col justify-center items-center rounded">
+            <img
+              className="max-w-full max-h-full h-3/4"
+              src="https://i.ibb.co/K9d8CKD/microsoft-logo.png"
+              alt=""
+            />
+            <h3 className="text-2xl font-bold text-slate-900">Microsoft</h3>
+          </div>
+          <div className="hp h-32 p-2 bg-white flex flex-col justify-center items-center rounded">
+            <img
+              className="max-w-full max-h-full h-3/4"
+              src="https://i.ibb.co/Wzhcpwy/HP-logo.png"
+              alt=""
+            />
+            <h3 className="text-2xl font-bold text-slate-900 mt-1">HP</h3>
+          </div>
+
+          <div className="apple h-32 p-2 bg-white flex flex-col justify-center items-center rounded">
+            <img
+              className="max-w-full max-h-full h-3/4"
+              src="https://i.ibb.co/djFpdbn/apple-logo.png"
+              alt=""
+            />
+            <h3 className="text-2xl font-bold text-slate-900">Apple</h3>
+          </div>
+          <div className="sharp h-32 p-2 bg-white flex flex-col justify-center items-center rounded">
+            <img
+              className="max-w-full max-h-full h-3/4"
+              src="https://i.ibb.co/nLd7w07/sharp-logo.png"
+              alt=""
+            />
+            <h3 className="text-2xl font-bold text-slate-900">Sharp</h3>
+          </div>
+
+          <div className="dji h-32 p-2 bg-white flex flex-col justify-center items-center rounded">
+            <img
+              className="max-w-full max-h-full h-3/4"
+              src="https://i.ibb.co/jLPNSy0/dji-logo.jpg"
+              alt=""
+            />
+            <h3 className="text-2xl font-bold text-slate-900">Dji</h3>
+          </div>
+          <div className="acer h-32 p-2 bg-white flex flex-col justify-center items-center rounded">
+            <img
+              className="max-w-full max-h-full h-3/4"
+              src="https://i.ibb.co/DRQwmzP/Acer-Logo.png"
+              alt=""
+            />
+            <h3 className="text-2xl font-bold text-slate-900">Acer</h3>
+          </div>
+          <div className="infinix h-32 p-2 bg-white flex flex-col justify-center items-center rounded">
+            <img
+              className="max-w-full max-h-full h-3/4"
+              src="https://i.ibb.co/Ky4gvPF/infinix-logo.jpg"
+              alt=""
+            />
+            <h3 className="text-2xl font-bold text-slate-900">Infinix</h3>
+          </div>
+          <div className="huawei h-32 p-2 bg-white flex flex-col justify-center items-center rounded">
+            <img
+              className="max-w-full max-h-full h-3/4"
+              src="https://i.ibb.co/kxD3kHm/huawei-logo.png"
+              alt=""
+            />
+            <h3 className="text-2xl font-bold text-slate-900">Huawei</h3>
+          </div>
+          <div className="wester-digital h-32 bg-white flex flex-col justify-center items-center rounded">
+            <img
+              className="max-w-full max-h-full h-3/4"
+              src="https://i.ibb.co/gM7CS3S/western-digital-logo.jpg"
+              alt=""
+            />
+            <h3 className="text-2xl font-bold text-slate-900">
+              Western Digital
+            </h3>
+          </div>
         </div>
       </div>
     </div>

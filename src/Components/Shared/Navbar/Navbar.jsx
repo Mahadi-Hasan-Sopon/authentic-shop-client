@@ -3,19 +3,24 @@ import { Link, NavLink } from "react-router-dom";
 import { RxAvatar } from "react-icons/rx";
 import { useContext } from "react";
 import { AuthContext } from "../../../Contexts/AuthContextProvider";
+import Logo from "/logo-svg.svg";
 
 function Navbar() {
   const { user } = useContext(AuthContext);
 
   return (
-    <div className="py-2 z-50 rounded max-w-7xl xl:mx-auto">
+    <div className="py-2 z-50 rounded max-w-7xl xl:mx-auto px-4">
       <div className="navbar mx-auto">
         <div className="navbar-start">
           <Link
             to="/"
             className="hidden sm:block text-2xl font-bold text-white"
           >
-            Authentic Shop
+            <img
+              className="max-w-full rounded h-16 bg-white"
+              src={Logo}
+              alt=""
+            />
           </Link>
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">

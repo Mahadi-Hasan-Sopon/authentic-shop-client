@@ -5,7 +5,7 @@ import Footer from "../Components/Shared/Footer/Footer";
 function MainLayout() {
   return (
     <div>
-      <div className="nav bg-slate-800">
+      <div className="nav bg-base-200">
         <Navbar />
       </div>
       <div className="outlet">

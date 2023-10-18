@@ -1,0 +1,34 @@
+.item1 .img1 {
+  background: url("https://i.ibb.co/tBXPyb3/mobile5-82e97c99-a66f-49da-89d2-92b3138d1f7b.png");
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.item2 .img2 {
+  background: url("https://i.ibb.co/58n3tWC/Frame.png");
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.item3 .img3 {
+  background: url("https://i.ibb.co/4N5J4FZ/mobile-banner.png");
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.right .right1 {
+  background: url("https://i.ibb.co/nQmjqBb/Frame-14.png");
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.right .right2 {
+  background: url("https://i.ibb.co/L5x66FJ/Frame-15.png");
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

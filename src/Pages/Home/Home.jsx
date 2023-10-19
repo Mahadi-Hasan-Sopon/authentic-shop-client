@@ -2,11 +2,11 @@ import { Carousel } from "react-responsive-carousel";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 import "./Home.css";
 import { useEffect, useState } from "react";
-import PropTypes from "prop-types";
 import LoadingSpinner from "../../utils/LoadingSpinner/LoadingSpinner";
 import { useContext } from "react";
 import { AuthContext } from "../../Contexts/AuthContextProvider";
 import { Link } from "react-router-dom";
+import ProductCard from "../../Components/ProductCard/ProductCard";
 
 function Home() {
   const { isLoading } = useContext(AuthContext);
@@ -141,11 +141,8 @@ function Home() {
         </h2>
         <div className="icons grid gap-8 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5">
           {brands?.map((brand) => (
-            <Link to={`/products/brand/${brand.name}`}>
-              <div
-                key={brand._id}
-                className="h-32 p-2 bg-white flex flex-col justify-center items-center rounded"
-              >
+            <Link key={brand._id} to={`/products/brand/${brand.name}`}>
+              <div className="h-32 p-2 bg-white flex flex-col justify-center items-center rounded">
                 <img
                   className="max-w-full max-h-full h-3/4 overflow-hidden"
                   src={brand.image}
@@ -164,35 +161,3 @@ function Home() {
 }
 
 export default Home;
-
-const ProductCard = ({ product }) => {
-  const { title, price, image, rating, stock } = product;
-
-  return (
-    <div className="space-y-3 shadow-md rounded py-6">
-      <div className="h-64 bg-white flex justify-center items-center p-6 rounded-md">
-        <img className="max-h-full max-w-full" src={image} alt={title} />
-      </div>
-      <div className="flex flex-col space-y-2">
-        <h4 className="text-lg font-semibold text-slate-100">
-          {title.slice(0, 20)}
-          {"..."}
-        </h4>
-
-        <p className="text-lg text-bold text-slate-200">
-          Price: ${((parseInt(price) * 100) / 100).toFixed(2)}
-        </p>
-        <p className="text-base text-medium text-slate-200">
-          Rating: {rating?.rate}, Review: {rating?.count}
-        </p>
-        <p className="text-base text-medium text-teal-600">
-          In stock {stock} Items.
-        </p>
-      </div>
-    </div>
-  );
-};
-
-ProductCard.propTypes = {
-  product: PropTypes.object.isRequired,
-};

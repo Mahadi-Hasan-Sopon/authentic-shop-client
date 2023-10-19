@@ -13,7 +13,7 @@ import {
 function Footer() {
   return (
     <div className="max-w-7xl lg:mx-auto p-6">
-      <div className="footer-main grid sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10 md:gap-6 sm:justify-between justify-center items-center">
+      <div className="footer-main grid sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10 md:gap-6 sm:justify-between justify-center">
         <div className="left md:col-span-2">
           <img className="bg-white h-16 rounded-md p-1" src={Logo} alt="" />
           <p className="text-base font-normal text-slate-300 py-5">

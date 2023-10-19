@@ -1,6 +1,6 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import ProductCard from "../../Components/ProductCard/ProductCard";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../../Contexts/AuthContextProvider";
 import LoadingSpinner from "../../utils/LoadingSpinner/LoadingSpinner";
 
@@ -9,7 +9,10 @@ function BrandProducts() {
   const loadedBrandProducts = useLoaderData();
   const params = useParams();
 
-  console.log(loadedBrandProducts);
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, []);
+
   return (
     <div className="max-w-7xl lg:mx-auto px-6">
       {isLoading && <LoadingSpinner />}

@@ -24,9 +24,9 @@ const ProductCard = ({ product, update }) => {
         <p className="text-base text-bold text-slate-200">
           Price: ${((parseInt(price) * 100) / 100).toFixed(2)}
         </p>
-        <p className="text-base text-medium text-slate-200">
+        <div className="text-base text-medium text-slate-200">
           <Rating rating={rating} />
-        </p>
+        </div>
         <div className="flex-grow"></div>
         <div
           className={`buttons flex ${update && "justify-between"} items-center`}

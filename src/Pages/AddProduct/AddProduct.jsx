@@ -133,7 +133,7 @@ function AddProduct() {
         </div>
         <div className="row sm:flex gap-6">
           <div className="form-control flex flex-col gap-4 w-full">
-            <button className="text-slate-800 text-2xl font-bold text-center py-3 bg-stone-200 hover:bg-base-100 rounded">
+            <button className="text-slate-800 text-2xl font-bold text-center py-3 bg-slate-200 hover:bg-slate-300 rounded">
               Add Product
             </button>
           </div>

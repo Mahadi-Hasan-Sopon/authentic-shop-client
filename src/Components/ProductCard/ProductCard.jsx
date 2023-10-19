@@ -1,8 +1,9 @@
 import PropTypes from "prop-types";
 import Rating from "../../utils/Rating/Rating";
+import { Link } from "react-router-dom";
 
 const ProductCard = ({ product, update }) => {
-  const { title, category, price, thumbnail, image, rating } = product;
+  const { _id, title, category, price, thumbnail, image, rating } = product;
 
   return (
     <div className="space-y-3 shadow-md rounded py-6 flex flex-col">
@@ -30,16 +31,21 @@ const ProductCard = ({ product, update }) => {
         <div
           className={`buttons flex ${update && "justify-between"} items-center`}
         >
-          <button
+          <Link
+            to={`/product/details/${_id}`}
             className={`btn btn-neutral ${update ? "w-auto" : "w-full"}`}
             type="button"
           >
             Details
-          </button>
+          </Link>
           {update && (
-            <button className="btn btn-accent" type="button">
+            <Link
+              to={`/product/update/${_id}`}
+              className="btn btn-accent"
+              type="button"
+            >
               Update
-            </button>
+            </Link>
           )}
         </div>
       </div>

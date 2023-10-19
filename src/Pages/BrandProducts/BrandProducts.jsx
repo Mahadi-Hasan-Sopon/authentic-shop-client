@@ -31,7 +31,7 @@ function BrandProducts() {
 
           <div className="products grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {loadedBrandProducts?.map((product) => (
-              <ProductCard key={product._id} product={product} />
+              <ProductCard key={product._id} product={product} update={true} />
             ))}
           </div>
         </div>

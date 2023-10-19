@@ -3,6 +3,7 @@ import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Contexts/AuthContextProvider";
 import { ToastContainer, toast } from "react-toastify";
+import LoadingSpinner from "../../utils/LoadingSpinner/LoadingSpinner";
 
 function Register() {
   const { registerWithEmailPassword, loginWithGoogle, isLoading } =
@@ -52,7 +53,7 @@ function Register() {
 
   return (
     <div>
-      {isLoading && "Loading......"}
+      {isLoading && <LoadingSpinner />}
       <ToastContainer autoClose={2500} />
       <div className="w-full md:w-2/3 lg:w-1/3 mx-auto">
         <div className="py-24">

@@ -4,8 +4,8 @@ import Footer from "../Components/Shared/Footer/Footer";
 
 function MainLayout() {
   return (
-    <div>
-      <div className="nav bg-base-200">
+    <div className="relative">
+      <div className="nav bg-base-200 relative z-50">
         <Navbar />
       </div>
       <div className="outlet">

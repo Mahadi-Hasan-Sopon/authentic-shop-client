@@ -4,12 +4,14 @@ import { RxAvatar } from "react-icons/rx";
 import { useContext } from "react";
 import { AuthContext } from "../../../Contexts/AuthContextProvider";
 import Logo from "/logo-svg.svg";
+import LoadingSpinner from "../../../utils/LoadingSpinner/LoadingSpinner";
 
 function Navbar() {
-  const { user } = useContext(AuthContext);
+  const { user, isLoading } = useContext(AuthContext);
 
   return (
-    <div className="py-2 z-50 rounded max-w-7xl xl:mx-auto px-4">
+    <div className="py-2 rounded max-w-7xl xl:mx-auto px-4">
+      {isLoading && <LoadingSpinner />}
       <div className="navbar mx-auto">
         <div className="navbar-start">
           <Link
@@ -63,7 +65,7 @@ function Navbar() {
                 />
               ) : (
                 <>
-                  <RxAvatar className="w-12 h-12 md:w-14 md:h-14 rounded-full cursor-pointer text-base-200 p-0.5" />
+                  <RxAvatar className="w-12 h-12 md:w-14 md:h-14 rounded-full cursor-pointer p-0.5" />
                 </>
               )}
               {user?.email && (

@@ -5,24 +5,24 @@ import { getAuth } from "firebase/auth";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: import.meta.env.VITE_APIKEY,
-  authDomain: import.meta.env.VITE_AUTHDOMAIN,
-  projectId: import.meta.env.VITE_PROJECTID,
-  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
-  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
-  appId: import.meta.env.VITE_APPID,
-};
+// const firebaseConfig = {
+//   apiKey: import.meta.env.VITE_APIKEY,
+//   authDomain: import.meta.env.VITE_AUTHDOMAIN,
+//   projectId: import.meta.env.VITE_PROJECTID,
+//   storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+//   messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+//   appId: import.meta.env.VITE_APPID,
+// };
 
 // Your web app's Firebase configuration
-// const firebaseConfig = {
-//   apiKey: "AIzaSyBt5GiRaLu17l03aGPzbPM7Nfx5Ccx6PbE",
-//   authDomain: "authentic-shop-f5f81.firebaseapp.com",
-//   projectId: "authentic-shop-f5f81",
-//   storageBucket: "authentic-shop-f5f81.appspot.com",
-//   messagingSenderId: "502565189678",
-//   appId: "1:502565189678:web:457996b92d70b1d7bf47bf",
-// };
+const firebaseConfig = {
+  apiKey: "AIzaSyBt5GiRaLu17l03aGPzbPM7Nfx5Ccx6PbE",
+  authDomain: "authentic-shop-f5f81.firebaseapp.com",
+  projectId: "authentic-shop-f5f81",
+  storageBucket: "authentic-shop-f5f81.appspot.com",
+  messagingSenderId: "502565189678",
+  appId: "1:502565189678:web:457996b92d70b1d7bf47bf",
+};
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);

@@ -19,11 +19,9 @@ function AuthContextProvider({ children }) {
 
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
-      if (currentUser) {
-        setUser(currentUser);
-        setIsLoading(false);
-        console.log(currentUser);
-      }
+      setUser(currentUser);
+      setIsLoading(false);
+      console.log(currentUser);
     });
 
     return () => unSubscribe();

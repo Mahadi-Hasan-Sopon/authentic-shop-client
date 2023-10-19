@@ -20,7 +20,7 @@ function AddProduct() {
       rating: { rate: rating },
       description,
     };
-    fetch("http://localhost:5000/products/new", {
+    fetch("https://authentic-shop-backend.vercel.app/products/new", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

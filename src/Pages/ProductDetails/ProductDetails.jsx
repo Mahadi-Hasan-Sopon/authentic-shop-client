@@ -43,7 +43,7 @@ function ProductDetails() {
   const cartProduct = { ...loadedProduct, quantity: parseInt(quantity) };
 
   const handleAddToCartClick = () => {
-    fetch("http://localhost:5000/addToCart", {
+    fetch("https://authentic-shop-backend.vercel.app/addToCart", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

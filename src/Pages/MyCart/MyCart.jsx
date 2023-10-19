@@ -8,7 +8,7 @@ function MyCart() {
   const [cartItems, setCartItems] = useState(loadedCartProducts);
 
   const handleDeleteClick = (id) => {
-    fetch(`http://localhost:5000/delete/${id}`, {
+    fetch(`https://authentic-shop-backend.vercel.app/delete/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -58,7 +58,7 @@ function MyCart() {
                 </tr>
               </thead>
               <tbody>
-                {cartItems.map((product, index) => (
+                {cartItems?.map((product, index) => (
                   <tr key={product._id} className="hover cursor-pointer">
                     <th className="text-lg"> {index + 1}</th>
                     <td className="h-28 min-w-[100px]">

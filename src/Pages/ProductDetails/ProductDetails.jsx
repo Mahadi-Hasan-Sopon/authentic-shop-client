@@ -16,6 +16,10 @@ function ProductDetails() {
     }
   };
 
+  const handleChange = (event) => {
+    setQuantity(event.target.value);
+  };
+
   const handleIncrement = () => {
     if (quantity < stock) {
       setQuantity((prev) => prev + 1);
@@ -36,7 +40,7 @@ function ProductDetails() {
     stock,
   } = loadedProduct;
 
-  const cartProduct = { ...loadedProduct, quantity: quantity };
+  const cartProduct = { ...loadedProduct, quantity: parseInt(quantity) };
 
   const handleAddToCartClick = () => {
     fetch("http://localhost:5000/addToCart", {
@@ -89,6 +93,7 @@ function ProductDetails() {
             <Quantity
               quantity={quantity}
               handleDecrement={handleDecrement}
+              handleChange={handleChange}
               handleIncrement={handleIncrement}
             />
             <p className="text-lg font-bold text-orange-400/90">

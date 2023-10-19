@@ -1,7 +1,12 @@
 import PropTypes from "prop-types";
 import "./Quantity.css";
 
-function Quantity({ quantity, handleIncrement, handleDecrement }) {
+function Quantity({
+  quantity,
+  handleIncrement,
+  handleDecrement,
+  handleChange,
+}) {
   return (
     <div>
       <div className="custom-number-input h-10 w-32">
@@ -13,6 +18,7 @@ function Quantity({ quantity, handleIncrement, handleDecrement }) {
             <span className="m-auto text-2xl font-thin">{"−"}</span>
           </button>
           <input
+            onChange={handleChange}
             type="number"
             className="outline-none focus:outline-none text-center w-full bg-gray-300 font-semibold text-md hover:text-black focus:text-black  md:text-basecursor-default flex items-center text-gray-700"
             name="custom-input-number"
@@ -31,9 +37,10 @@ function Quantity({ quantity, handleIncrement, handleDecrement }) {
 }
 
 Quantity.propTypes = {
-  quantity: PropTypes.number,
+  quantity: PropTypes.string,
   handleDecrement: PropTypes.func,
   handleIncrement: PropTypes.func,
+  handleChange: PropTypes.func,
 };
 
 export default Quantity;

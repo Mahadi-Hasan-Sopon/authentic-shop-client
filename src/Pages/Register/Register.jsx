@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Contexts/AuthContextProvider";
 import { ToastContainer, toast } from "react-toastify";
 import LoadingSpinner from "../../utils/LoadingSpinner/LoadingSpinner";
@@ -8,6 +8,8 @@ import LoadingSpinner from "../../utils/LoadingSpinner/LoadingSpinner";
 function Register() {
   const { registerWithEmailPassword, loginWithGoogle, isLoading } =
     useContext(AuthContext);
+
+  const navigate = useNavigate();
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -32,6 +34,7 @@ function Register() {
       .then((response) => {
         toast.success("Registration Successful");
         console.log(response.user);
+        navigate("/");
       })
       .catch((err) => {
         console.log(err);
@@ -44,6 +47,7 @@ function Register() {
       .then((result) => {
         toast.success("user logged in successfully");
         console.log(result.user);
+        navigate("/");
       })
       .catch((error) => {
         toast.error(error?.message);

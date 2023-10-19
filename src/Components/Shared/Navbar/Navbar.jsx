@@ -7,7 +7,7 @@ import Logo from "/logo-svg.svg";
 import LoadingSpinner from "../../../utils/LoadingSpinner/LoadingSpinner";
 
 function Navbar() {
-  const { user, isLoading } = useContext(AuthContext);
+  const { user, isLoading, signOutUser } = useContext(AuthContext);
 
   return (
     <div className="py-2 rounded max-w-7xl xl:mx-auto px-4">
@@ -76,7 +76,7 @@ function Navbar() {
             </div>
             {user ? (
               <button
-                // onClick={() => handleLogOutUser()}
+                onClick={() => signOutUser()}
                 className="text-lg md:text-xl py-2 px-8 md:px-10 text-white bg-gradient-to-r from-slate-700 to-slate-600 rounded"
               >
                 Sign Out

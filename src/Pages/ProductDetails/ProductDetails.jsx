@@ -5,20 +5,8 @@ import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 
 function ProductDetails() {
-  const loadedProduct = useLoaderData();
-  const {
-    title,
-    description,
-    price,
-    image,
-    thumbnail,
-    category,
-    brand,
-    rating,
-    stock,
-  } = loadedProduct;
-
   const [quantity, setQuantity] = useState(1);
+  const loadedProduct = useLoaderData();
 
   const handleDecrement = () => {
     if (quantity > 1) {
@@ -34,6 +22,38 @@ function ProductDetails() {
     } else {
       toast.error("Stock limit reached, can't buy more.");
     }
+  };
+
+  const {
+    title,
+    description,
+    price,
+    image,
+    thumbnail,
+    category,
+    brand,
+    rating,
+    stock,
+  } = loadedProduct;
+
+  const cartProduct = { ...loadedProduct, quantity: quantity };
+
+  const handleAddToCartClick = () => {
+    fetch("http://localhost:5000/addToCart", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(cartProduct),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => {
+        console.log(error);
+        toast.error(error?.message);
+      });
   };
 
   return (
@@ -52,6 +72,9 @@ function ProductDetails() {
           </p>
           <p className="text-base font-medium text-slate-300">Brand: {brand}</p>
           <h1 className="text-3xl font-bold text-slate-200"> {title}</h1>
+          <p className="text-base font-medium text-slate-300">
+            SKU: {loadedProduct?.id ? loadedProduct.id : loadedProduct?._id}
+          </p>
           <Rating rating={rating} />
           <div className="price flex items-center gap-4">
             {loadedProduct?.oldPrice && (
@@ -73,7 +96,10 @@ function ProductDetails() {
             </p>
           </div>
           <div className="cart">
-            <button className="w-full py-3 rounded-full border-2 border-orange-400/80 text-orange-400 hover:text-white hover:bg-orange-400/90 hover:border-transparent text-xl font-bold">
+            <button
+              onClick={handleAddToCartClick}
+              className="w-full py-3 rounded-full border-2 border-orange-400/80 text-orange-400 hover:text-white hover:bg-orange-400/90 hover:border-transparent text-xl font-bold"
+            >
               Add to Cart
             </button>
           </div>

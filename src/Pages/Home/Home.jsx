@@ -131,7 +131,7 @@ function Home() {
             trendingProducts
               .slice(0, 10)
               ?.map((product) => (
-                <ProductCard key={product._id} product={product} />
+                <ProductCard key={product._id} product={product} update={false} />
               ))}
         </div>
       </div>

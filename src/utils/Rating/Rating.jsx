@@ -19,7 +19,7 @@ function Rating({ rating }) {
   ));
 
   return (
-    <div className="star-rating flex items-center">
+    <div className="star-rating flex items-center text-base">
       {stars} <span className="ms-2">{count} review</span>
     </div>
   );

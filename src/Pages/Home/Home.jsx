@@ -18,7 +18,7 @@ function Home() {
       .then((res) => res.json())
       .then((data) => {
         setTrendingProducts(data);
-        console.log(data);
+        // console.log(data);
       })
       .catch((error) => console.log(error));
   }, []);
@@ -27,7 +27,7 @@ function Home() {
     fetch("http://localhost:5000/brands")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setBrands(data);
       })
       .catch((error) => console.log(error));
@@ -77,7 +77,7 @@ function Home() {
                   >
                     Shop now
                     <span>
-                      <HiOutlineArrowNarrowRight />{" "}
+                      <HiOutlineArrowNarrowRight />
                     </span>
                   </button>
                 </div>
@@ -131,7 +131,11 @@ function Home() {
             trendingProducts
               .slice(0, 10)
               ?.map((product) => (
-                <ProductCard key={product._id} product={product} update={false} />
+                <ProductCard
+                  key={product._id}
+                  product={product}
+                  update={false}
+                />
               ))}
         </div>
       </div>

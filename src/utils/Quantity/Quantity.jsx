@@ -37,7 +37,7 @@ function Quantity({
 }
 
 Quantity.propTypes = {
-  quantity: PropTypes.string,
+  quantity: PropTypes.any,
   handleDecrement: PropTypes.func,
   handleIncrement: PropTypes.func,
   handleChange: PropTypes.func,

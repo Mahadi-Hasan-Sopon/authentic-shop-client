@@ -47,6 +47,7 @@ function UpdateProduct() {
         console.log(data);
         if (data.acknowledged == true) {
           toast.success("Product Added Successfully");
+          form.reset();
         }
       })
       .catch((error) => {

@@ -85,7 +85,7 @@ function Login() {
                         </span>
                         <button
                           type="button"
-                          className="py-1.5 px-4 border ms-2 rounded-lg bg-gradient-to-r from-[#ff2259] to-[#ff6339] text-white"
+                          className="py-1.5 px-4 border border-slate-800 ms-2 rounded-lg bg-gradient-to-r from-slate-600 to-slate-700 text-white outline-none"
                         >
                           <Link to="/register">Register</Link>
                         </button>
@@ -95,7 +95,7 @@ function Login() {
                   <div className="form-control mt-6">
                     <button
                       type="submit"
-                      className="text-xl font-bold md:text-xl py-4 px-8 md:px-10 text-white bg-gradient-to-r from-[#ff6339] to-[#ff2259] rounded"
+                      className="text-xl font-bold md:text-xl py-4 px-8 md:px-10 text-white bg-gradient-to-r from-slate-700 to-slate-600 rounded"
                     >
                       Login
                     </button>
@@ -106,7 +106,7 @@ function Login() {
             </div>
             <div
               onClick={handleGoogleLoginClick}
-              className="flex justify-center items-center gap-4 mt-6 w-full md:max-lg:w-1/2 mx-auto py-4 px-6 rounded-lg border-2 border-[#ff2259d7] cursor-pointer font-bold md:text-xl text-slate-800 hover:bg-gradient-to-r from-[#ff2259b0] to-[#ff6439b4] hover:border-transparent"
+              className="flex justify-center items-center gap-4 mt-6 w-full md:max-lg:w-1/2 mx-auto py-4 px-6 rounded-lg border-2 border-slate-700 cursor-pointer font-bold md:text-xl text-slate-200 hover:bg-gradient-to-r from-slate-600 to-slate-700 hover:border-transparent"
             >
               <FcGoogle className="text-2xl" />
               <button className="text-lg">Login With Google</button>

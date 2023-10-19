@@ -35,12 +35,12 @@ function Footer() {
             </div>
           </div>
           <div className="socials flex flex-wrap justify-center md:justify-between gap-4 items-center text-3xl py-3 pe-6">
-            <FaFacebook />
-            <FaTwitter />
-            <FaInstagram />
-            <FaWhatsapp />
-            <FaLinkedin />
-            <FaYoutube />
+            <FaFacebook className="cursor-pointer hover:text-blue-400" />
+            <FaTwitter className="cursor-pointer hover:text-blue-500" />
+            <FaInstagram className="cursor-pointer hover:text-red-400" />
+            <FaWhatsapp className="cursor-pointer hover:text-green-600" />
+            <FaLinkedin className="cursor-pointer hover:text-blue-500" />
+            <FaYoutube className="cursor-pointer hover:text-red-500" />
           </div>
         </div>
         <div className="left-center">
@@ -107,7 +107,7 @@ function Footer() {
             Copyright © 2023, Made with <AiFillHeart />
           </p>
           <p className="text-base text-slate-400 flex items-center gap-1">
-            by {"Mahadi Hasan."}
+            by Mahadi Hasan.
           </p>
         </div>
         <img src="https://i.ibb.co/CWsHRLk/patment-icon1.png" alt="" />

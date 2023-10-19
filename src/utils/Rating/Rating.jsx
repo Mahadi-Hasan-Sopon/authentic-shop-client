@@ -2,9 +2,7 @@ import PropTypes from "prop-types";
 import { FaStar } from "react-icons/fa";
 
 function Rating({ rating }) {
-  const { rate, count } = rating;
-
-  const fillPercentage = (rate / 5) * 100;
+  const fillPercentage = (rating.rate / 5) * 100;
 
   // Create an array of 5 stars
   const stars = Array.from({ length: 5 }, (_, index) => (
@@ -20,7 +18,8 @@ function Rating({ rating }) {
 
   return (
     <div className="star-rating flex items-center text-base">
-      {stars} <span className="ms-2">{count} review</span>
+      {stars}{" "}
+      <span className="ms-2">{rating?.count ? rating.count : 10} review</span>
     </div>
   );
 }

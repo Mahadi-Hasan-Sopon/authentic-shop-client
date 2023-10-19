@@ -5,6 +5,7 @@ function AddProduct() {
     e.preventDefault();
     const form = e.target;
     const title = form.title.value;
+    const brand = form.brand.value;
     const category = form.category.value;
     const price = form.price.value;
     const image = form.image.value;
@@ -12,6 +13,7 @@ function AddProduct() {
     const description = form.description.value;
     const product = {
       title,
+      brand,
       category,
       price,
       image,
@@ -73,6 +75,17 @@ function AddProduct() {
         <div className="row sm:flex gap-6">
           <div className="form-control flex flex-col gap-4 w-full">
             <label className="label text-xl font-semibold text-secondaryBlack text-opacity-80">
+              <span className="label-text">Brand</span>
+            </label>
+            <input
+              type="text"
+              name="brand"
+              placeholder="e.g: Acer, HP, Dell, Apple"
+              className="input rounded p-3 placeholder:text-secondaryBlack placeholder:text-opacity-60"
+            />
+          </div>
+          <div className="form-control flex flex-col gap-4 w-full">
+            <label className="label text-xl font-semibold text-secondaryBlack text-opacity-80">
               <span className="label-text">Price</span>
             </label>
             <input
@@ -84,12 +97,12 @@ function AddProduct() {
           </div>
           <div className="form-control flex flex-col gap-4 w-full">
             <label className="label text-xl font-semibold text-secondaryBlack text-opacity-80">
-              <span className="label-text">Photo</span>
+              <span className="label-text">Rating</span>
             </label>
             <input
               type="text"
-              name="image"
-              placeholder="Enter photo URL"
+              name="rating"
+              placeholder="Enter rating"
               className="input rounded p-3 placeholder:text-secondaryBlack placeholder:text-opacity-60"
             />
           </div>
@@ -97,12 +110,12 @@ function AddProduct() {
         <div className="row sm:flex gap-6">
           <div className="form-control flex flex-col gap-4 w-full">
             <label className="label text-xl font-semibold text-secondaryBlack text-opacity-80">
-              <span className="label-text">Rating</span>
+              <span className="label-text">Photo</span>
             </label>
             <input
               type="text"
-              name="rating"
-              placeholder="Enter rating"
+              name="image"
+              placeholder="Enter photo URL"
               className="input rounded p-3 placeholder:text-secondaryBlack placeholder:text-opacity-60"
             />
           </div>

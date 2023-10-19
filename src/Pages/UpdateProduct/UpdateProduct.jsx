@@ -1,10 +1,11 @@
 import { useLoaderData } from "react-router-dom";
-import { toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 
 function UpdateProduct() {
   const loadProduct = useLoaderData();
 
   const {
+    _id,
     title,
     description,
     image,
@@ -34,8 +35,8 @@ function UpdateProduct() {
       rating: { rate: rating },
       description,
     };
-    fetch("http://localhost:5000/products/new", {
-      method: "POST",
+    fetch(`http://localhost:5000/product/update/${_id}`, {
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
@@ -56,6 +57,7 @@ function UpdateProduct() {
 
   return (
     <div>
+      <ToastContainer autoClose={1500} />
       <h1 className="text-3xl my-8 text-slate-100 font-bold text-center">
         Update Product
       </h1>

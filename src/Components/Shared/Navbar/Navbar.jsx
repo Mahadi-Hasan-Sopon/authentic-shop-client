@@ -5,6 +5,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../../Contexts/AuthContextProvider";
 import Logo from "/logo-svg.svg";
 import LoadingSpinner from "../../../utils/LoadingSpinner/LoadingSpinner";
+import ToggleTheme from "../../../utils/ToggleTheme/ToggleTheme";
 
 function Navbar() {
   const { user, isLoading, signOutUser } = useContext(AuthContext);
@@ -14,18 +15,16 @@ function Navbar() {
       {isLoading && <LoadingSpinner />}
       <div className="navbar mx-auto">
         <div className="navbar-start">
-          <Link
-            to="/"
-            className="hidden sm:block text-2xl font-bold text-white"
-          >
+          <Link to="/" className="hidden sm:block text-2xl">
             <img
               className="max-w-full rounded h-16 bg-white"
               src={Logo}
               alt=""
             />
           </Link>
+
           <div className="dropdown">
-            <label tabIndex={0} className="btn btn-ghost lg:hidden">
+            <label tabIndex={0} className="btn btn-ghost lg:hidden bg-base-200">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-8 w-8"
@@ -48,14 +47,15 @@ function Navbar() {
               <NavbarLinks LiClass={"px-8 md:px-12 block w-full"} />
             </ul>
           </div>
+          <ToggleTheme className={"ms-4"} />
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="gap-10 menu-horizontal px-1">
             <NavbarLinks />
           </ul>
         </div>
-        <div className="navbar-end ">
-          <div className="flex items-center gap-2.5">
+        <div className="navbar-end">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5">
             <div className="tooltip group mr-0.5 z-50">
               {user?.photoURL ? (
                 <img
@@ -65,7 +65,7 @@ function Navbar() {
                 />
               ) : (
                 <>
-                  <RxAvatar className="w-12 h-12 md:w-14 md:h-14 rounded-full cursor-pointer p-0.5" />
+                  <RxAvatar className="dark:text-slate-500 text-slate-700 w-12 h-12 md:w-14 md:h-14 rounded-full cursor-pointer p-0.5" />
                 </>
               )}
               {user?.email && (
@@ -77,14 +77,14 @@ function Navbar() {
             {user ? (
               <button
                 onClick={() => signOutUser()}
-                className="text-lg md:text-xl py-2 px-8 md:px-10 text-white bg-gradient-to-r from-slate-700 to-slate-600 rounded"
+                className="text-lg md:text-xl py-2 px-6 md:px-8 dark:text-slate-200 text-slate-800 bg-gradient-to-r dark:from-slate-700 dark:to-slate-600 rounded-full border-2 border-slate-700"
               >
                 Sign Out
               </button>
             ) : (
               <Link
                 to={"/login"}
-                className="text-lg md:text-xl py-2 px-8 md:px-10 text-white bg-gradient-to-r from-slate-700 to-slate-600 rounded"
+                className="text-lg md:text-xl py-2 px-6 md:px-8 dark:text-white bg-gradient-to-r from-slate-700 to-slate-600 rounded"
               >
                 Login
               </Link>
@@ -107,8 +107,8 @@ const NavbarLinks = ({ LiClass }) => {
             isPending
               ? "text-amber-500 font-bold"
               : isActive
-              ? "text-slate-100 text-lg font-bold"
-              : "font-medium text-slate-200 block"
+              ? "dark:text-slate-100 text-lg font-bold"
+              : "font-medium dark:text-slate-200 block"
           }
           to="/"
         >
@@ -122,8 +122,8 @@ const NavbarLinks = ({ LiClass }) => {
             isPending
               ? "text-amber-500 font-bold"
               : isActive
-              ? "text-slate-100 text-lg font-bold"
-              : "font-medium text-slate-200"
+              ? "dark:text-slate-100 text-lg font-bold"
+              : "font-medium dark:text-slate-200"
           }
         >
           Add Product
@@ -136,8 +136,8 @@ const NavbarLinks = ({ LiClass }) => {
             isPending
               ? "text-amber-500 font-bold"
               : isActive
-              ? "text-slate-100 text-lg font-bold"
-              : "font-medium text-slate-200"
+              ? "dark:text-slate-100 text-lg font-bold"
+              : "font-medium dark:text-slate-200"
           }
         >
           My Cart

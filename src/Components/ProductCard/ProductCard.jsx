@@ -6,7 +6,7 @@ const ProductCard = ({ product, update }) => {
   const { _id, title, category, price, thumbnail, image, rating } = product;
 
   return (
-    <div className="space-y-3 shadow-md rounded py-6 flex flex-col">
+    <div className="space-y-3 shadow-md rounded py-6 flex flex-col bg-white p-2 dark:bg-inherit">
       <div className="h-64 bg-white flex justify-center items-center rounded-md overflow-hidden">
         <img
           className="max-h-full max-w-full hover:scale-125 duration-300"
@@ -14,17 +14,17 @@ const ProductCard = ({ product, update }) => {
           alt={title}
         />
       </div>
-      <div className="flex-grow flex flex-col space-y-2">
-        <h4 className="text-xl font-semibold text-slate-100">
+      <div className="flex-grow flex flex-col space-y-2 px-1">
+        <h4 className="text-xl font-semibold dark:text-slate-100 text-slate-600">
           {title.length > 20 ? title.slice(0, 20) + "..." : title}
         </h4>
-        <p className="text-base text-bold text-slate-200">
+        <p className="text-base text-bold dark:text-slate-200 text-slate-400">
           Category: {category}
         </p>
-        <p className="text-base text-bold text-slate-200">
+        <p className="text-base text-bold dark:text-slate-200 text-slate-500">
           Price: ${((parseInt(price) * 100) / 100).toFixed(2)}
         </p>
-        <div className="text-base text-medium text-slate-200">
+        <div className="text-base text-medium dark:text-slate-200 text-slate-400">
           <Rating rating={rating} />
         </div>
         <div className="flex-grow"></div>
@@ -33,7 +33,9 @@ const ProductCard = ({ product, update }) => {
         >
           <Link
             to={`/product/details/${_id}`}
-            className={`btn btn-neutral ${update ? "w-auto" : "w-full"}`}
+            className={`btn dark:btn-neutral bg-slate-200 text-slate-700 hover:text-white ${
+              update ? "w-auto" : "w-full"
+            }`}
             type="button"
           >
             Details

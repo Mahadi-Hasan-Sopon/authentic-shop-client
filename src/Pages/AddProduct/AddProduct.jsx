@@ -41,28 +41,35 @@ function AddProduct() {
   };
 
   return (
-    <div className="max-w-7xl xl:mx-auto">
-      <h1 className="text-3xl my-8 text-slate-200 dark:text-slate-5100 font-bold text-center">
+    <div className="max-w-7xl xl:mx-auto px-6 my-10">
+      <h1 className="text-3xl my-8 dark:text-slate-200 text-slate-700 font-bold text-center">
         Add Product
       </h1>
       <ToastContainer autoClose={1500} position="top-center" />
-      <form onSubmit={handleAddProduct} className="space-y-6 bg-base-200 p-6">
+      <form
+        onSubmit={handleAddProduct}
+        className="space-y-6 dark:bg-base-200 bg-slate-200 p-6 rounded"
+      >
         <div className="row sm:flex gap-6">
           <div className="form-control flex flex-col gap-4 w-full">
-            <label className="label text-xl font-semibold text-opacity-80">
-              <span className="label-text dark:text-slate-200">Name</span>
+            <label className="label text-xl font-semibold">
+              <span className="label-text dark:text-slate-200 text-slate-500">
+                Name
+              </span>
             </label>
             <input
               type="text"
               name="title"
               placeholder="Enter product name"
-              className="input rounded p-3 placeholder:text-secondaryBlack placeholder:text-opacity-60"
+              className="input rounded p-3 placeholder:text-opacity-60"
               required
             />
           </div>
           <div className="form-control flex flex-col gap-4 w-full">
-            <label className="label text-xl font-semibold text-secondaryBlack text-opacity-80">
-              <span className="label-text">Category</span>
+            <label className="label text-xl font-semibold">
+              <span className="label-text dark:text-slate-200 text-slate-500">
+                Category
+              </span>
             </label>
             <input
               type="text"
@@ -74,8 +81,10 @@ function AddProduct() {
         </div>
         <div className="row sm:flex gap-6">
           <div className="form-control flex flex-col gap-4 w-full">
-            <label className="label text-xl font-semibold text-secondaryBlack text-opacity-80">
-              <span className="label-text">Brand</span>
+            <label className="label text-xl font-semibold">
+              <span className="label-text dark:text-slate-200 text-slate-500">
+                Brand
+              </span>
             </label>
             <input
               type="text"
@@ -85,8 +94,10 @@ function AddProduct() {
             />
           </div>
           <div className="form-control flex flex-col gap-4 w-full">
-            <label className="label text-xl font-semibold text-secondaryBlack text-opacity-80">
-              <span className="label-text">Price</span>
+            <label className="label text-xl font-semibold">
+              <span className="label-text dark:text-slate-200 text-slate-500">
+                Price
+              </span>
             </label>
             <input
               type="text"
@@ -96,21 +107,25 @@ function AddProduct() {
             />
           </div>
           <div className="form-control flex flex-col gap-4 w-full">
-            <label className="label text-xl font-semibold text-secondaryBlack text-opacity-80">
-              <span className="label-text">Rating</span>
+            <label className="label text-xl font-semibold">
+              <span className="label-text dark:text-slate-200 text-slate-500">
+                Rating
+              </span>
             </label>
             <input
               type="text"
               name="rating"
               placeholder="Enter rating"
-              className="input rounded p-3 placeholder:text-secondaryBlack placeholder:text-opacity-60"
+              className="input rounded p-3 placeholder:text-opacity-60"
             />
           </div>
         </div>
         <div className="row sm:flex gap-6">
           <div className="form-control flex flex-col gap-4 w-full">
-            <label className="label text-xl font-semibold text-secondaryBlack text-opacity-80">
-              <span className="label-text">Photo</span>
+            <label className="label text-xl font-semibold">
+              <span className="label-text dark:text-slate-200 text-slate-500">
+                Photo
+              </span>
             </label>
             <input
               type="text"
@@ -120,8 +135,10 @@ function AddProduct() {
             />
           </div>
           <div className="form-control flex flex-col gap-4 w-full">
-            <label className="label text-xl font-semibold text-secondaryBlack text-opacity-80">
-              <span className="label-text">Short Description</span>
+            <label className="label text-xl font-semibold">
+              <span className="label-text dark:text-slate-200 text-slate-500">
+                Short Description
+              </span>
             </label>
             <input
               type="text"
@@ -131,9 +148,9 @@ function AddProduct() {
             />
           </div>
         </div>
-        <div className="row sm:flex gap-6">
+        <div className="row sm:flex gap-6 pt-4">
           <div className="form-control flex flex-col gap-4 w-full">
-            <button className="text-slate-800 text-2xl font-bold text-center py-3 bg-slate-200 hover:bg-slate-300 rounded">
+            <button className="text-slate-800 text-2xl font-bold text-center py-3 bg-slate-300 hover:bg-slate-800 hover:text-slate-200 rounded">
               Add Product
             </button>
           </div>

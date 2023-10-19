@@ -1,12 +1,16 @@
 import { useLoaderData } from "react-router-dom";
 import Rating from "../../utils/Rating/Rating";
 import Quantity from "../../utils/Quantity/Quantity";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 
 function ProductDetails() {
   const [quantity, setQuantity] = useState(1);
   const loadedProduct = useLoaderData();
+
+  useEffect(() => {
+    window.scrollTo({ top: 50 });
+  }, []);
 
   const handleDecrement = () => {
     if (quantity > 1) {
@@ -65,7 +69,7 @@ function ProductDetails() {
 
   return (
     <div className="max-w-7xl lg:mx-auto p-6 my-10">
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid md:grid-cols-2 gap-10">
         <div className="image w-full bg-white p-4 rounded">
           <img
             className="w-full h-full"
@@ -73,13 +77,18 @@ function ProductDetails() {
             alt={title}
           />
         </div>
-        <div className="content w-full space-y-3">
-          <p className="text-base font-medium text-slate-300">
+        <div className="content w-full space-y-4">
+          <p className="text-base font-medium dark:text-slate-300 text-slate-500">
             Category: {category}
           </p>
-          <p className="text-base font-medium text-slate-300">Brand: {brand}</p>
-          <h1 className="text-3xl font-bold text-slate-200"> {title}</h1>
-          <p className="text-base font-medium text-slate-300">
+          <p className="text-base font-medium dark:text-slate-300 text-slate-500">
+            Brand: {brand}
+          </p>
+          <h1 className="text-3xl font-bold dark:text-slate-200 text-slate-600">
+            {" "}
+            {title}
+          </h1>
+          <p className="text-base font-medium dark:text-slate-300 text-slate-500">
             SKU: {loadedProduct?.id ? loadedProduct.id : loadedProduct?._id}
           </p>
           <Rating rating={rating} />
@@ -91,7 +100,9 @@ function ProductDetails() {
             )}
             <h3 className="text-2xl font-bold text-orange-400/95"> ${price}</h3>
           </div>
-          <p className="text-base font-medium text-slate-400">{description}</p>
+          <p className="text-base font-medium dark:text-slate-400 text-slate-500 pt-4">
+            {description}
+          </p>
           <div className="purchase py-6 flex items-center gap-6">
             <Quantity
               quantity={quantity}

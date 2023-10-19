@@ -122,8 +122,8 @@ function Home() {
           </div>
         </div>
       </header>
-      <div className="trending my-6 md:my-10 px-6">
-        <h2 className="text-3xl font-bold text-slate-100 mb-6">
+      <div className="trending my-6 md:my-10 px-6 text-slate-700 dark:text-slate-100">
+        <h2 className="text-3xl font-bold dark:text-slate-100 mb-6">
           Trending Products
         </h2>
         <div className="products grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
@@ -140,7 +140,7 @@ function Home() {
         </div>
       </div>
       <div className="brands py-6 md:py-10 px-6">
-        <h2 className="text-3xl uppercase font-bold text-slate-100 mb-6">
+        <h2 className="text-3xl uppercase font-bold dark:text-slate-100 text-slate-800 mb-6">
           Brands
         </h2>
         <div className="icons grid gap-8 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5">

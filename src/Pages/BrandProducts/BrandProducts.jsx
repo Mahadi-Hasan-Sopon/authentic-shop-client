@@ -18,7 +18,7 @@ function BrandProducts() {
       {isLoading && <LoadingSpinner />}
       {loadedBrandProducts.length < 1 ? (
         <div className="flex justify-center items-center flex-col my-20">
-          <h2 className="text-5xl font-bold text-white">
+          <h2 className="text-5xl font-bold dark:text-white text-slate-700">
             Sorry, No Product Found!
           </h2>
           <img
@@ -27,8 +27,8 @@ function BrandProducts() {
           />
         </div>
       ) : (
-        <div className=" flex flex-col mx-auto justify-center items-center my-20">
-          <h2 className="text-3xl font-bold text-slate-100 mb-6">
+        <div className=" flex flex-col mx-auto justify-center items-center my-10">
+          <h2 className="text-3xl font-bold dark:text-slate-100 text-slate-800 mb-6">
             {params.brandName} Brand Products
           </h2>
 

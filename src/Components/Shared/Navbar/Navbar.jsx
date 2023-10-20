@@ -17,7 +17,7 @@ function Navbar() {
         <div className="navbar-start">
           <Link to="/" className="hidden sm:block text-2xl">
             <img
-              className="max-w-full rounded h-16 bg-white"
+              className="max-w-full rounded h-16 bg-white mr-2"
               src={Logo}
               alt=""
             />
@@ -44,7 +44,9 @@ function Navbar() {
               tabIndex={0}
               className="dropdown-content mt-1 py-6 shadow bg-[#202020] space-y-4 w-[300px]"
             >
-              <NavbarLinks LiClass={"px-8 md:px-12 block w-full"} />
+              <NavbarLinks
+                LiClass={"px-8 md:px-12 block w-full text-slate-200"}
+              />
             </ul>
           </div>
           <ToggleTheme className={"ms-4"} />
@@ -84,7 +86,7 @@ function Navbar() {
             ) : (
               <Link
                 to={"/login"}
-                className="text-lg md:text-xl py-2 px-6 md:px-8 dark:text-white bg-gradient-to-r from-slate-700 to-slate-600 rounded"
+                className="text-lg md:text-xl py-2 px-6 md:px-8 text-white bg-gradient-to-r from-slate-700 to-slate-600 rounded"
               >
                 Login
               </Link>

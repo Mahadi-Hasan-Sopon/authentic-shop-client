@@ -126,7 +126,7 @@ function Home() {
         <h2 className="text-3xl font-bold dark:text-slate-100 mb-6">
           Trending Products
         </h2>
-        <div className="products grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        <div className="products grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {trendingProducts.length > 10 &&
             trendingProducts
               .slice(0, 10)

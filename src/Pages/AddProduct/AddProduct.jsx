@@ -48,7 +48,7 @@ function AddProduct() {
       <ToastContainer autoClose={1500} position="top-center" />
       <form
         onSubmit={handleAddProduct}
-        className="space-y-6 dark:bg-base-200 bg-slate-200 p-6 rounded"
+        className="space-y-6 dark:bg-base-200 bg-slate-200 p-6 lg:p-10 rounded"
       >
         <div className="row sm:flex gap-6">
           <div className="form-control flex flex-col gap-4 w-full">
@@ -61,7 +61,7 @@ function AddProduct() {
               type="text"
               name="title"
               placeholder="Enter product name"
-              className="input rounded p-3 placeholder:text-opacity-60"
+              className="input rounded bg-slate-100 dark:bg-base-300 dark:text-slate-400 text-slate-900 p-3 placeholder:text-opacity-60"
               required
             />
           </div>
@@ -75,7 +75,7 @@ function AddProduct() {
               type="text"
               name="category"
               placeholder="e.g: monitor, laptop, smartphones, computer, storage, sound-system"
-              className="input rounded p-3 placeholder:text-secondaryBlack placeholder:text-opacity-60"
+              className="input rounded bg-slate-100 dark:bg-base-300 dark:text-slate-400 text-slate-900 p-3 placeholder:text-secondaryBlack placeholder:text-opacity-60"
             />
           </div>
         </div>
@@ -90,7 +90,7 @@ function AddProduct() {
               type="text"
               name="brand"
               placeholder="e.g: Acer, HP, Dell, Apple"
-              className="input rounded p-3 placeholder:text-secondaryBlack placeholder:text-opacity-60"
+              className="input rounded bg-slate-100 dark:bg-base-300 dark:text-slate-400 text-slate-900 p-3 placeholder:text-secondaryBlack placeholder:text-opacity-60"
             />
           </div>
           <div className="form-control flex flex-col gap-4 w-full">
@@ -103,7 +103,7 @@ function AddProduct() {
               type="text"
               name="price"
               placeholder="850"
-              className="input rounded p-3 placeholder:text-secondaryBlack placeholder:text-opacity-60"
+              className="input rounded bg-slate-100 dark:bg-base-300 dark:text-slate-400 text-slate-900 p-3 placeholder:text-secondaryBlack placeholder:text-opacity-60"
             />
           </div>
           <div className="form-control flex flex-col gap-4 w-full">
@@ -116,7 +116,7 @@ function AddProduct() {
               type="text"
               name="rating"
               placeholder="Enter rating"
-              className="input rounded p-3 placeholder:text-opacity-60"
+              className="input rounded bg-slate-100 dark:bg-base-300 dark:text-slate-400 text-slate-900 p-3 placeholder:text-opacity-60"
             />
           </div>
         </div>
@@ -131,7 +131,7 @@ function AddProduct() {
               type="text"
               name="image"
               placeholder="Enter photo URL"
-              className="input rounded p-3 placeholder:text-secondaryBlack placeholder:text-opacity-60"
+              className="input rounded bg-slate-100 dark:bg-base-300 dark:text-slate-400 text-slate-900 p-3 placeholder:text-secondaryBlack placeholder:text-opacity-60"
             />
           </div>
           <div className="form-control flex flex-col gap-4 w-full">
@@ -144,7 +144,7 @@ function AddProduct() {
               type="text"
               name="description"
               placeholder="Enter product short details"
-              className="input rounded p-3 placeholder:text-secondaryBlack placeholder:text-opacity-60"
+              className="input rounded bg-slate-100 dark:bg-base-300 dark:text-slate-400 text-slate-900 p-3 placeholder:text-secondaryBlack placeholder:text-opacity-60"
             />
           </div>
         </div>

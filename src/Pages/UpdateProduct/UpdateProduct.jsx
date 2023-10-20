@@ -78,7 +78,7 @@ function UpdateProduct() {
               name="title"
               defaultValue={title}
               placeholder="Enter product name"
-              className="input rounded p-3 placeholder:text-opacity-60"
+              className="input rounded bg-slate-100 dark:bg-base-300 dark:text-slate-400 text-slate-900 p-3 placeholder:text-opacity-60"
               required
             />
           </div>
@@ -93,7 +93,7 @@ function UpdateProduct() {
               name="category"
               defaultValue={category}
               placeholder="e.g: monitor, laptop, smartphones, computer, storage, sound-system"
-              className="input rounded p-3 placeholder:text-opacity-60"
+              className="input rounded bg-slate-100 dark:bg-base-300 dark:text-slate-400 text-slate-900 p-3 placeholder:text-opacity-60"
             />
           </div>
         </div>
@@ -109,7 +109,7 @@ function UpdateProduct() {
               name="brand"
               defaultValue={brand}
               placeholder="e.g: Acer, HP, Dell, Apple"
-              className="input rounded p-3 placeholder:text-opacity-60"
+              className="input rounded bg-slate-100 dark:bg-base-300 dark:text-slate-400 text-slate-900 p-3 placeholder:text-opacity-60"
             />
           </div>
           <div className="form-control flex flex-col gap-4 w-full">
@@ -123,7 +123,7 @@ function UpdateProduct() {
               name="price"
               defaultValue={price}
               placeholder="850"
-              className="input rounded p-3 placeholder:text-opacity-60"
+              className="input rounded bg-slate-100 dark:bg-base-300 dark:text-slate-400 text-slate-900 p-3 placeholder:text-opacity-60"
             />
           </div>
           <div className="form-control flex flex-col gap-4 w-full">
@@ -137,7 +137,7 @@ function UpdateProduct() {
               name="rating"
               defaultValue={rating?.rate}
               placeholder="Enter rating"
-              className="input rounded p-3 placeholder:text-opacity-60"
+              className="input rounded bg-slate-100 dark:bg-base-300 dark:text-slate-400 text-slate-900 p-3 placeholder:text-opacity-60"
             />
           </div>
         </div>
@@ -153,7 +153,7 @@ function UpdateProduct() {
               name="image"
               defaultValue={image ? image : thumbnail}
               placeholder="Enter photo URL"
-              className="input rounded p-3 placeholder:text-opacity-60"
+              className="input rounded bg-slate-100 dark:bg-base-300 dark:text-slate-400 text-slate-900 p-3 placeholder:text-opacity-60"
             />
           </div>
           <div className="form-control flex flex-col gap-4 w-full">
@@ -167,7 +167,7 @@ function UpdateProduct() {
               name="description"
               defaultValue={description}
               placeholder="Enter product short details"
-              className="input rounded p-3 placeholder:text-opacity-60"
+              className="input rounded bg-slate-100 dark:bg-base-300 dark:text-slate-400 text-slate-900 p-3 placeholder:text-opacity-60"
             />
           </div>
         </div>

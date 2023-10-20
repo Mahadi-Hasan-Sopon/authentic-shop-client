@@ -46,33 +46,37 @@ function Login() {
         <div className="py-24">
           <div className="flex-col">
             <div className="mb-10">
-              <h1 className="text-5xl font-bold text-center text-white">
+              <h1 className="text-5xl font-bold text-center dark:text-white text-slate-600">
                 Login now!
               </h1>
             </div>
-            <div className="flex-shrink-0 w-full shadow-2xl bg-base-100 rounded-xl">
+            <div className="flex-shrink-0 w-full shadow-2xl dark:bg-base-100 bg-slate-200 rounded-xl">
               <div className="card-body">
                 <form onSubmit={handleLoginClick}>
                   <div className="form-control">
                     <label className="label">
-                      <span className="label-text">Email</span>
+                      <span className="label-text dark:text-slate-200 text-slate-500">
+                        Email
+                      </span>
                     </label>
                     <input
                       type="email"
                       name="email"
                       placeholder="email"
-                      className="input input-bordered"
+                      className="input input-bordered bg-slate-100 dark:bg-base-300 dark:text-slate-400 text-slate-900"
                     />
                   </div>
                   <div className="form-control">
                     <label className="label">
-                      <span className="label-text">Password</span>
+                      <span className="label-text dark:text-slate-200 text-slate-500">
+                        Password
+                      </span>
                     </label>
                     <input
                       type="password"
                       name="password"
                       placeholder="password"
-                      className="input input-bordered"
+                      className="input input-bordered bg-slate-100 dark:bg-base-300 dark:text-slate-400 text-slate-900"
                     />
                     <label className="label flex flex-wrap gap-4">
                       <Link className="label-text-alt link link-hover">
@@ -106,7 +110,7 @@ function Login() {
             </div>
             <div
               onClick={handleGoogleLoginClick}
-              className="flex justify-center items-center gap-4 mt-6 w-full md:max-lg:w-1/2 mx-auto py-4 px-6 rounded-lg border-2 border-slate-700 cursor-pointer font-bold md:text-xl text-slate-200 hover:bg-gradient-to-r from-slate-600 to-slate-700 hover:border-transparent"
+              className="flex justify-center items-center gap-4 mt-6 w-full md:max-lg:w-1/2 mx-auto py-4 px-6 rounded-lg border-2 border-slate-700 cursor-pointer font-bold md:text-xl dark:text-slate-200 text-slate-600 hover:bg-gradient-to-r from-slate-600 to-slate-700 hover:border-transparent"
             >
               <FcGoogle className="text-2xl" />
               <button className="text-lg">Login With Google</button>

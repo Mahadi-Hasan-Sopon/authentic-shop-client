@@ -35,7 +35,7 @@ function UpdateProduct() {
       rating: { rate: rating },
       description,
     };
-    fetch(`https://authentic-shop-backend.vercel.app/product/update/${_id}`, {
+    fetch(`http://localhost:5000/product/update/${_id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

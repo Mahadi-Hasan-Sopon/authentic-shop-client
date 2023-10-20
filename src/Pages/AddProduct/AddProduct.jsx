@@ -11,6 +11,7 @@ function AddProduct() {
     const image = form.image.value;
     const rating = form.rating.value;
     const description = form.description.value;
+    const stock = form.stock.value;
     const product = {
       title,
       brand,
@@ -19,8 +20,9 @@ function AddProduct() {
       image,
       rating: { rate: rating },
       description,
+      stock: parseInt(stock),
     };
-    fetch("https://authentic-shop-backend.vercel.app/products/new", {
+    fetch("http://localhost:5000/products/new", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -75,6 +77,19 @@ function AddProduct() {
               type="text"
               name="category"
               placeholder="e.g: monitor, laptop, smartphones, computer, storage, sound-system"
+              className="input rounded bg-slate-100 dark:bg-base-300 dark:text-slate-400 text-slate-900 p-3 placeholder:text-secondaryBlack placeholder:text-opacity-60"
+            />
+          </div>
+          <div className="form-control flex flex-col gap-4 w-full">
+            <label className="label text-xl font-semibold">
+              <span className="label-text dark:text-slate-200 text-slate-500">
+                Stock
+              </span>
+            </label>
+            <input
+              type="text"
+              name="stock"
+              placeholder="15"
               className="input rounded bg-slate-100 dark:bg-base-300 dark:text-slate-400 text-slate-900 p-3 placeholder:text-secondaryBlack placeholder:text-opacity-60"
             />
           </div>

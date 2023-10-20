@@ -8,7 +8,7 @@ function MyCart() {
   const [cartItems, setCartItems] = useState(loadedCartProducts);
 
   const handleDeleteClick = (id) => {
-    fetch(`https://authentic-shop-backend.vercel.app/delete/${id}`, {
+    fetch(`http://localhost:5000/delete/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

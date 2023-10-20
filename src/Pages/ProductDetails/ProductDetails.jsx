@@ -8,8 +8,17 @@ function ProductDetails() {
   const [quantity, setQuantity] = useState(1);
   const loadedProduct = useLoaderData();
 
+  const [existingProduct, setExistingProduct] = useState([]);
+
   useEffect(() => {
     window.scrollTo({ top: 50 });
+
+    fetch("http://localhost:5000/cart")
+      .then((res) => res.json())
+      .then((cartItems) => {
+        console.log(cartItems);
+        setExistingProduct(cartItems);
+      });
   }, []);
 
   const handleDecrement = () => {
@@ -47,7 +56,14 @@ function ProductDetails() {
   const cartProduct = { ...loadedProduct, quantity: parseInt(quantity) };
 
   const handleAddToCartClick = () => {
-    fetch("https://authentic-shop-backend.vercel.app/addToCart", {
+    const alreadyInCart = existingProduct?.filter(
+      (product) => product._id === loadedProduct._id
+    );
+    if (alreadyInCart) {
+      return toast.error("Product already in Cart.");
+    }
+
+    fetch("http://localhost:5000/addToCart", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

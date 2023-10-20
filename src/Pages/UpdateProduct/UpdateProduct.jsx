@@ -1,8 +1,14 @@
-import { useLoaderData } from "react-router-dom";
+import { useEffect } from "react";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 
 function UpdateProduct() {
   const loadProduct = useLoaderData();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo({ top: 30 });
+  }, []);
 
   const {
     _id,
@@ -26,16 +32,18 @@ function UpdateProduct() {
     const image = form.image.value;
     const rating = form.rating.value;
     const description = form.description.value;
+    const stock = form.stock.value;
     const product = {
       title,
       brand,
       category,
       price,
       image,
+      stock: parseInt(stock),
       rating: { rate: rating },
       description,
     };
-    fetch(`http://localhost:5000/product/update/${_id}`, {
+    fetch(`https://authentic-shop-backend.vercel.app/product/update/${_id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -45,9 +53,8 @@ function UpdateProduct() {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if (data.acknowledged == true) {
-          toast.success("Product Added Successfully");
-          form.reset();
+        if (data.modifiedCount > 0) {
+          toast.success("Product Updated Successfully");
         }
       })
       .catch((error) => {
@@ -58,6 +65,12 @@ function UpdateProduct() {
 
   return (
     <div className="max-w-7xl xl:mx-auto px-6 my-10">
+      <button
+        className="btn dark:btn-neutral btn-outline"
+        onClick={() => navigate(-1)}
+      >
+        Go Back
+      </button>
       <ToastContainer autoClose={1500} />
       <h1 className="text-3xl my-8 dark:text-slate-200 text-slate-700 font-bold text-center">
         Update Product
@@ -93,6 +106,20 @@ function UpdateProduct() {
               name="category"
               defaultValue={category}
               placeholder="e.g: monitor, laptop, smartphones, computer, storage, sound-system"
+              className="input rounded bg-slate-100 dark:bg-base-300 dark:text-slate-400 text-slate-900 p-3 placeholder:text-opacity-60"
+            />
+          </div>
+          <div className="form-control flex flex-col gap-4 w-full">
+            <label className="label text-xl font-semibold text-opacity-80">
+              <span className="label-text dark:text-slate-200 text-slate-500">
+                Stock
+              </span>
+            </label>
+            <input
+              type="text"
+              name="stock"
+              defaultValue={loadProduct?.stock ? loadProduct.stock : 0}
+              placeholder="22"
               className="input rounded bg-slate-100 dark:bg-base-300 dark:text-slate-400 text-slate-900 p-3 placeholder:text-opacity-60"
             />
           </div>

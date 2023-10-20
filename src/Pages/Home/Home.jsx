@@ -14,7 +14,7 @@ function Home() {
   const [brands, setBrands] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/trending")
+    fetch("https://authentic-shop-backend.vercel.app/trending")
       .then((res) => res.json())
       .then((data) => {
         setTrendingProducts(data);
@@ -24,7 +24,7 @@ function Home() {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:5000/brands")
+    fetch("https://authentic-shop-backend.vercel.app/brands")
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);

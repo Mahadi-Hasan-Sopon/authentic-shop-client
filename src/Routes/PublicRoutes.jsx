@@ -44,7 +44,7 @@ const routes = createBrowserRouter([
             <MyCart />
           </PrivateRoutes>
         ),
-        loader: () => fetch("http://localhost:5000/cart"),
+        loader: () => fetch("https://authentic-shop-backend.vercel.app/cart"),
       },
       {
         path: "/product/details/:id",
@@ -54,7 +54,9 @@ const routes = createBrowserRouter([
           </PrivateRoutes>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/product/${params.id}`),
+          fetch(
+            `https://authentic-shop-backend.vercel.app/product/${params.id}`
+          ),
       },
       {
         path: "/product/update/:id",
@@ -64,13 +66,17 @@ const routes = createBrowserRouter([
           </PrivateRoutes>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/product/${params.id}`),
+          fetch(
+            `https://authentic-shop-backend.vercel.app/product/${params.id}`
+          ),
       },
       {
         path: "/products/brand/:brandName",
         element: <BrandProducts />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/brand/${params.brandName}`),
+          fetch(
+            `https://authentic-shop-backend.vercel.app/brand/${params.brandName}`
+          ),
       },
     ],
   },

@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Rating from "../../utils/Rating/Rating";
 import Quantity from "../../utils/Quantity/Quantity";
 import { useEffect, useState } from "react";
@@ -7,16 +7,16 @@ import { ToastContainer, toast } from "react-toastify";
 function ProductDetails() {
   const [quantity, setQuantity] = useState(1);
   const loadedProduct = useLoaderData();
-
   const [existingProduct, setExistingProduct] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     window.scrollTo({ top: 50 });
 
-    fetch("http://localhost:5000/cart")
+    fetch("https://authentic-shop-backend.vercel.app/cart")
       .then((res) => res.json())
       .then((cartItems) => {
-        console.log(cartItems);
+        // console.log(cartItems);
         setExistingProduct(cartItems);
       });
   }, []);
@@ -30,7 +30,9 @@ function ProductDetails() {
   };
 
   const handleChange = (event) => {
-    setQuantity(event.target.value);
+    const newQuantity = parseInt(event.target.value, 10);
+
+    setQuantity(newQuantity);
   };
 
   const handleIncrement = () => {
@@ -59,11 +61,12 @@ function ProductDetails() {
     const alreadyInCart = existingProduct?.filter(
       (product) => product._id === loadedProduct._id
     );
-    if (alreadyInCart) {
+    console.log(alreadyInCart);
+    if (alreadyInCart.length) {
       return toast.error("Product already in Cart.");
     }
 
-    fetch("http://localhost:5000/addToCart", {
+    fetch("https://authentic-shop-backend.vercel.app/addToCart", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -85,7 +88,13 @@ function ProductDetails() {
 
   return (
     <div className="max-w-7xl lg:mx-auto p-6 my-10">
-      <div className="grid md:grid-cols-2 gap-10">
+      <button
+        className="btn dark:btn-neutral btn-outline"
+        onClick={() => navigate(-1)}
+      >
+        Go Back
+      </button>
+      <div className="grid md:grid-cols-2 gap-10 mt-2">
         <div className="image w-full bg-white p-4 rounded">
           <img
             className="w-full h-full"
@@ -101,7 +110,6 @@ function ProductDetails() {
             Brand: {brand}
           </p>
           <h1 className="text-3xl font-bold dark:text-slate-200 text-slate-600">
-            {" "}
             {title}
           </h1>
           <p className="text-base font-medium dark:text-slate-300 text-slate-500">

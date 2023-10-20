@@ -13,11 +13,8 @@ function useQuantity(initialQuantity = 1) {
     }
   };
 
-  const handleChange = (event) => {
-    const newQuantity = parseInt(event.target.value, 10);
-    if (!isNaN(newQuantity) && newQuantity >= 1) {
-      setQuantity(newQuantity);
-    }
+  const handleChange = (newQuantity) => {
+    setQuantity(newQuantity);
   };
 
   return { quantity, increment, decrement, handleChange };

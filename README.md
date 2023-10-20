@@ -119,7 +119,7 @@ Before you begin setting up the backend for Authentic Shop, make sure you have t
    npm start
    ```
 
-6. Visit http://localhost:5173 in your browser to explore **Authentic Shop**.
+6. Visit http://localhost:5000 in your browser to explore **Authentic Shop**.
 
 ## [Live Link](https://authentic-shop-f5f81.web.app/)
 

@@ -6,7 +6,7 @@ const ProductCard = ({ product, update }) => {
   const { _id, title, category, price, thumbnail, image, rating } = product;
 
   return (
-    <div className="space-y-3 shadow-md rounded py-6 flex flex-col bg-white p-2 dark:bg-inherit">
+    <div className="w-full space-y-3 shadow-md rounded py-6 flex flex-col bg-white p-2 dark:bg-inherit">
       <div className="h-64 bg-white flex justify-center items-center rounded-md overflow-hidden">
         <img
           className="max-h-full max-w-full hover:scale-125 duration-300"

@@ -14,7 +14,7 @@ function ToggleTheme({ className }) {
   return (
     <div className={className}>
       <input
-        onClick={toggleDarkMode}
+        onChange={toggleDarkMode}
         type="checkbox"
         className="toggle toggle-md"
         checked={checked}

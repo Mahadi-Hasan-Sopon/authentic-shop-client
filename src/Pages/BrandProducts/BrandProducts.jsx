@@ -27,12 +27,12 @@ function BrandProducts() {
           />
         </div>
       ) : (
-        <div className=" flex flex-col mx-auto justify-center items-center my-10">
+        <div className="flex flex-col mx-auto justify-center items-center my-10">
           <h2 className="text-3xl font-bold dark:text-slate-100 text-slate-800 mb-6">
             {params.brandName} Brand Products
           </h2>
 
-          <div className="products grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+          <div className="products grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {loadedBrandProducts?.map((product) => (
               <ProductCard key={product._id} product={product} update={true} />
             ))}

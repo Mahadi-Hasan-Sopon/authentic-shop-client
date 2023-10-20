@@ -5,10 +5,11 @@ import { useContext } from "react";
 import { AuthContext } from "../../../Contexts/AuthContextProvider";
 import Logo from "/logo-svg.svg";
 import LoadingSpinner from "../../../utils/LoadingSpinner/LoadingSpinner";
-import ToggleTheme from "../../../utils/ToggleTheme/ToggleTheme";
+import { ThemeContext } from "../../../Contexts/ThemeContextProvider";
 
 function Navbar() {
   const { user, isLoading, signOutUser } = useContext(AuthContext);
+  const { toggleTheme, checked } = useContext(ThemeContext);
 
   return (
     <div className="py-2 rounded max-w-7xl xl:mx-auto px-4">
@@ -49,7 +50,14 @@ function Navbar() {
               />
             </ul>
           </div>
-          <ToggleTheme className={"ms-4"} />
+          <div className="toggle-div">
+            <input
+              type="checkbox"
+              className="toggle"
+              onChange={toggleTheme}
+              checked={checked}
+            />
+          </div>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="gap-10 menu-horizontal px-1">

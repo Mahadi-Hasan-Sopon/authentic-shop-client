@@ -8,11 +8,14 @@ import "./index.css";
 import { RouterProvider } from "react-router-dom";
 import routes from "./Routes/PublicRoutes.jsx";
 import AuthContextProvider from "./Contexts/AuthContextProvider";
+import ThemeContextProvider from "./Contexts/ThemeContextProvider";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <AuthContextProvider>
-      <RouterProvider router={routes} />
-    </AuthContextProvider>
+    <ThemeContextProvider>
+      <AuthContextProvider>
+        <RouterProvider router={routes} />
+      </AuthContextProvider>
+    </ThemeContextProvider>
   </React.StrictMode>
 );

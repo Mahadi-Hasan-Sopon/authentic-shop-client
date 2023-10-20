@@ -55,7 +55,7 @@ function Home() {
                   >
                     Shop now
                     <span>
-                      <HiOutlineArrowNarrowRight />{" "}
+                      <HiOutlineArrowNarrowRight />
                     </span>
                   </button>
                 </div>
